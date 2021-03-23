@@ -100,39 +100,39 @@ class Delegate(DefaultDelegate):
         elif(hnd == 74):
             cmd = data[1:][0]
             if cmd == 0xe0:
-            if data[0] == 0x08:
-                # Start ringing
-                self.device.writeDisplayCommand([0x14, 0x00, 0x00])
-                self.device._default_lost_device()
-            elif data[0] == 0x0f:
-                # Stop ringing
-                self.device.writeDisplayCommand([0x14, 0x00, 0x01])
-                self.device._default_found_device()
-            elif cmd == 0xe0:
-                self.device.setMusic()
-                if(self.device._default_music_focus_in):
-                    self.device._default_music_focus_in()
-            elif cmd == 0xe1:
-                if(self.device._default_music_focus_out):
-                    self.device._default_music_focus_out()
-            elif cmd == 0x00:
-                if(self.device._default_music_play):
-                    self.device._default_music_play()
-            elif cmd == 0x01:
-                if(self.device._default_music_pause):
-                    self.device._default_music_pause()
-            elif cmd == 0x03:
-                if(self.device._default_music_forward):
-                    self.device._default_music_forward()
-            elif cmd == 0x04:
-                if(self.device._default_music_back):
-                    self.device._default_music_back()
-            elif cmd == 0x05:
-                if(self.device._default_music_vup):
-                    self.device._default_music_vup()
-            elif cmd == 0x06:
-                if(self.device._default_music_vdown):
-                    self.device._default_music_vdown()
+                if data[0] == 0x08:
+                    # Start ringing
+                    self.device.writeDisplayCommand([0x14, 0x00, 0x00])
+                    self.device._default_lost_device()
+                elif data[0] == 0x0f:
+                    # Stop ringing
+                    self.device.writeDisplayCommand([0x14, 0x00, 0x01])
+                    self.device._default_found_device()
+                elif cmd == 0xe0:
+                    self.device.setMusic()
+                    if(self.device._default_music_focus_in):
+                        self.device._default_music_focus_in()
+                elif cmd == 0xe1:
+                    if(self.device._default_music_focus_out):
+                        self.device._default_music_focus_out()
+                elif cmd == 0x00:
+                    if(self.device._default_music_play):
+                        self.device._default_music_play()
+                elif cmd == 0x01:
+                    if(self.device._default_music_pause):
+                        self.device._default_music_pause()
+                elif cmd == 0x03:
+                    if(self.device._default_music_forward):
+                        self.device._default_music_forward()
+                elif cmd == 0x04:
+                    if(self.device._default_music_back):
+                        self.device._default_music_back()
+                elif cmd == 0x05:
+                    if(self.device._default_music_vup):
+                        self.device._default_music_vup()
+                elif cmd == 0x06:
+                    if(self.device._default_music_vdown):
+                        self.device._default_music_vdown()
 
 
 class miband(Peripheral):
